@@ -1,0 +1,44 @@
+--// GUI
+local g = Instance.new("ScreenGui", game.CoreGui)
+g.Name = "@khllqscripts"
+
+local f = Instance.new("Frame", g)
+f.Size = UDim2.fromOffset(300,150)
+f.Position = UDim2.new(.5,-150,.5,-75)
+f.BackgroundColor3 = Color3.fromRGB(25,25,25)
+f.Active, f.Draggable = true, true
+Instance.new("UICorner", f).CornerRadius = UDim.new(0,10)
+
+--// Credit
+local t = Instance.new("TextLabel", f)
+t.Size = UDim2.fromOffset(150,25)
+t.Position = UDim2.fromOffset(10,5)
+t.BackgroundTransparency = 1
+t.Text = "@khllqscripts"
+t.TextColor3 = Color3.new(1,1,1)
+t.Font = Enum.Font.GothamBold
+t.TextSize = 14
+t.TextXAlignment = Enum.TextXAlignment.Left
+
+--// Button
+local b = Instance.new("TextButton", f)
+b.Size = UDim2.fromOffset(200,50)
+b.Position = UDim2.new(.5,-100,.5,-25)
+b.BackgroundColor3 = Color3.fromRGB(40,40,40)
+b.TextColor3 = Color3.new(1,1,1)
+b.TextSize = 20
+b.Text = "Teleport"
+b.BorderSizePixel = 0
+Instance.new("UICorner", b).CornerRadius = UDim.new(0,8)
+
+--// CFrames
+local cf1 = CFrame.new(-477.9,-142.6,1940.17)
+local cf2 = CFrame.new(1315.09,-141.62,-191.38)
+local toggle = false
+
+b.MouseButton1Click:Connect(function()
+	local hrp = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+	toggle = not toggle
+	hrp.CFrame = toggle and cf1 or cf2
+	b.Text = toggle and "Return" or "Teleport"
+end)
