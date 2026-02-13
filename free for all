@@ -32,7 +32,7 @@ b.BorderSizePixel = 0
 Instance.new("UICorner", b).CornerRadius = UDim.new(0,8)
 
 --// CFrames
-local cf1 = CFrame.new(-477.9,-142.6,1940.17)
+local cf1 = CFrame.new(1315.52, -141.62, -191.30)
 local cf2 = CFrame.new(6.27, -138.90, 1274.96)
 local toggle = false
 
